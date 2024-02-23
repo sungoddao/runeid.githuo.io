@@ -5,12 +5,3 @@
     "ignore": ["juno.json", ".github/**/*", "CNAME", "LICENSE"]
   }
 }
-await Promise.all([
-  initJuno({
-    satelliteId: import.meta.env.VITE_SATELLITE_ID
-  }),
-  initOrbiter({
-    satelliteId: import.meta.env.VITE_SATELLITE_ID,
-    orbiterId: import.meta.env.VITE_ORBITER_ID
-  })
-]);
