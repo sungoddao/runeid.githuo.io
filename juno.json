@@ -1,6 +1,6 @@
 {
   "satellite": {
-    "satelliteId": "dvrig-wqaaa-aaaal-advnq-cai",
+    "satelliteId": "hnh5r-eyaaa-aaaal-advua-cai",
     "source": ".",
     "ignore": ["**/juno.json", "**/.github/**/*", "**/CNAME", "**/LICENSE", "**/README.md", "**/.git/**/*"]
   }
