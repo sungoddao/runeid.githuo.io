@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RUNE ID V2 NFT</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <style>
+        body {
+            background-color: #1E1E1E;
+            font-family: Arial, sans-serif;
+        }
+        
+        #header {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            color: #fff;
+        }
+        
+        #header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        #header p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        #nav {
+            background-color: #444;
+            text-align: center;
+            padding: 10px 0;
+        }
+        
+        #nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        #nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        
+        #nav ul li a:hover {
+            color: #ccc;
+        }
+        
+        #nft-intro {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        #nft-intro h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        #nft-intro p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        #ul {
+            position: relative;
+            width: 100vw;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #ul li {
+            margin: 10px;
+            width: 64px;
+            height: 64px;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: transform 0.5s, box-shadow 0.5s;
+            position: relative;
+        }
+        
+        #ul li:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(105, 105, 105, 0.49);
+        }
+        
+        #ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* 添加遮罩样式 */
+        
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            opacity: 0;
+            /* 默认隐藏 */
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        #ul li:hover .img-overlay {
+            opacity: 1;
+            /* 鼠标悬停时显示 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img src="runeid.logo.png" alt="Logo" width="50">
+        <h1>RNUE ID NFT</h1>
+        <p>Welcome to browse our RUNE ID NFT</p>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="https://hnh5r-eyaaa-aaaal-advua-cai.icp0.io/">Home</a></li>
+            <li><a href="https://oc.app/community/te7h6-jqaaa-aaaar-a4zka-cai/?ref=nrm2v-nqaaa-aaaaf-absrq-cai" target="_blank">OC CHAT</a></li>
+            <li><a href="https://inspip.com/open-art/idpipe" target="_blank">Pipe MINT</a></li>
+            <li>
+                <a href="#contact"></a>
+            </li>
+            <li>
+                <a href="#blog"></a>
+            </li>
+        </ul>
+    </div>
+    <div id="imageContainer">
+        <ul id="imageList"></ul>
+        <div id="pagination"></div>
+    </div>
+    <div id="nft-intro">
+        <h2>Rune ID NFT:</h2>
+        <p>Non-fungible tokens (NFT) are digital assets based on blockchain technology and are unique and irreplaceable.</p>
+        <p>Rune ID NFT: Your Exclusive Digital Identity</p>
+        <p>Rune ID NFT is a digital identity credential based on blockchain technology. Each NFT has a unique ID number and is securely bound to your personal information. Rune ID NFT can be used in various scenarios, such as:</p>
+        <p>(1)Identity verification: Securely verify your identity in both the virtual and real worlds.</p>
+        <p>(2)Digital asset management: Securely store and manage your digital assets, such as cryptocurrencies and NFTs.</p>
+        <p>(3)Data privacy protection: Protect your personal data privacy and control how your data is used.</p>
+        <p>Advantages of Rune ID NFT:</p>
+        <p>(1)Secure and reliable: Based on blockchain technology, ensuring the security and reliability of your identity information.</p>
+        <p>(2)Unique: Each NFT has a unique ID number.</p>
+        <p>Permanent ownership: Once you own a Rune ID NFT, you will own it permanently.</p>
+    </div>
+    <ul id="ul"></ul>
+    <script>
+        window.addEventListener('load', function() {
+            var ul = document.getElementById('ul');
+            var currentPage = 1;
+            var imagesPerPage = 50; // 每页显示的图片数量
+            var imgLinkArray = [];
+
+            // 生成包含一万个图片链接的数组
+            for (var i = 1; i <= 10000; i++) {
+                imgLinkArray.push(`https://bafybeiefgx4jdjht6j6w25mwg36m6ztsomy4fcnqeceqnvhr34btt4oqei.ipfs.nftstorage.link/${i}.png`);
+            }
+
+            function displayImages(page) {
+                var start = (page - 1) * imagesPerPage;
+                var end = start + imagesPerPage;
+                for (var i = start; i < end && i < imgLinkArray.length; i++) {
+                    var li = document.createElement('li');
+                    var img = document.createElement('img');
+                    img.src = imgLinkArray[i];
+                    li.appendChild(img);
+
+                    // 添加遮罩和 ID 文本
+                    var overlay = document.createElement('div');
+                    overlay.classList.add('img-overlay');
+                    overlay.textContent = "ID: " + (i + 1); // ID 从 1 开始计数
+                    li.appendChild(overlay);
+
+                    ul.appendChild(li);
+                }
+            }
+
+            // 初始加载第一页的图片
+            displayImages(currentPage);
+
+            // 当滚动到页面底部时加载新的图片
+            window.addEventListener('scroll', function() {
+                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                    currentPage++;
+                    displayImages(currentPage);
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
