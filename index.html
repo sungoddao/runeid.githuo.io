@@ -2,215 +2,377 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUNE ID NFT</title>
-    <link rel="icon" href="icon1.png" type="image/png">
+    <title>Joshua Art Studio</title>
+    <link rel="icon" href="icon.png" type="image/png">
     <style>
+        /* 你的样式 */
+        
         body {
-            background-color: #1E1E1E;
-            font-family: Arial, sans-serif;
+            background-color: #000;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            /* 垂直居中排列 */
         }
         
-        #header {
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-            color: #fff;
-        }
-        
-        #header h1 {
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-        
-        #header p {
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        
-        #nav {
-            background-color: #444;
-            text-align: center;
-            padding: 10px 0;
-        }
-        
-        #nav ul {
-            list-style-type: none;
+        body,
+        html {
+            height: 100%;
+            width: 100%;
             margin: 0;
             padding: 0;
         }
         
-        #nav ul li {
-            display: inline-block;
-            margin-right: 20px;
+        .mainSVG {
+            width: 80%;
+            height: 80%;
+            overflow: visible;
         }
+        /* 新添加的样式，用于标题栏目和导航 */
         
-        #nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        
-        #nav ul li a:hover {
-            color: #ccc;
-        }
-        
-        #nft-intro {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+        header {
             text-align: center;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
         
-        #nft-intro h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+        header h1 {
+            color: white;
         }
         
-        #nft-intro p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        
-        #ul {
-            position: relative;
-            width: 100vw;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        #ul li {
-            margin: 10px;
-            width: 64px;
-            height: 64px;
-            overflow: hidden;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: transform 0.5s, box-shadow 0.5s;
-            position: relative;
-        }
-        
-        #ul li:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(105, 105, 105, 0.49);
-        }
-        
-        #ul li img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        /* 添加遮罩样式 */
-        
-        .img-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        footer {
+            background-color: #030303;
+            /* 底部背景颜色 */
             color: #fff;
-            font-size: 12px;
-            opacity: 0;
-            /* 默认隐藏 */
-            transition: opacity 0.3s ease-in-out;
+            /* 文本颜色 */
+            padding: 20px;
+            /* 内边距 */
+            text-align: center;
+            /* 文本居中 */
         }
         
-        #ul li:hover .img-overlay {
-            opacity: 1;
-            /* 鼠标悬停时显示 */
+        footer a {
+            color: #fff;
+            /* 设置链接颜色为白色 */
+            text-decoration: underline;
+            /* 添加下划线 */
+            margin: 0 5px;
+            /* 调整链接之间的间距 */
         }
     </style>
+
 </head>
 
 <body>
-    <div id="header">
-        <img src="runeid1.logo.png" alt="Logo" width="50">
-        <h1>RNUE ID NFT</h1>
-        <p>Welcome to browse our RUNE ID NFT</p>
-    </div>
-    <div id="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="v1/index.html">Rune ID V2</a></li>
-            <li><a href="https://oc.app/community/te7h6-jqaaa-aaaar-a4zka-cai/?ref=nrm2v-nqaaa-aaaaf-absrq-cai" target="_blank">OC CHAT</a></li>
-            <li><a href="https://inspip.com/open-art/pipeid" target="_blank">Pipe MINT</a></li>
-            <li><a href="https://ordinalsbot.com/mint/bitcoin-id" target="_blank">Brc20 MINT</a></li>
-            <li><a href="c/index.html" target="_blank">ChromaPortraits</a></li>
-            <li><a href="pixel/index.html" target="_blank">Pixel NFT</a></li>
-            <li><a href="line/index.html" target="_blank">Line NFT</a></li>
-            <li><a href="rune/index.html" target="_blank">Rune Block NFT</a></li>
-        </ul>
-    </div>
-    <div id="imageContainer">
-        <ul id="imageList"></ul>
-        <div id="pagination"></div>
-    </div>
-    <div id="nft-intro">
-        <h2>Rune ID NFT:</h2>
-        <p>Non-fungible tokens (NFT) are digital assets based on blockchain technology and are unique and irreplaceable.</p>
-        <p>Rune ID NFT: Your Exclusive Digital Identity</p>
-        <p>Rune ID NFT is a digital identity credential based on blockchain technology. Each NFT has a unique ID number and is securely bound to your personal information. Rune ID NFT can be used in various scenarios, such as:</p>
-        <p>(1)Identity verification: Securely verify your identity in both the virtual and real worlds.</p>
-        <p>(2)Digital asset management: Securely store and manage your digital assets, such as cryptocurrencies and NFTs.</p>
-        <p>(3)Data privacy protection: Protect your personal data privacy and control how your data is used.</p>
-        <p>Advantages of Rune ID NFT:</p>
-        <p>(1)Secure and reliable: Based on blockchain technology, ensuring the security and reliability of your identity information.</p>
-        <p>(2)Unique: Each NFT has a unique ID number.</p>
-        <p>Permanent ownership: Once you own a Rune ID NFT, you will own it permanently.</p>
-    </div>
-    <ul id="ul"></ul>
+    <!-- 添加的标题栏目和导航 -->
+    <header>
+        <h1>Joshua Art Studio</h1>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="art/index.html">Art</a>
+            <a href="https://grtja-biaaa-aaaad-qa6ta-cai.raw.ic0.app/">0x00 Play</a>
+        </nav>
+    </header>
+    <svg class="mainSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 600">
+<defs>
+<filter id="glow" y="-50%" height="180%" color-interpolation-filters="sRGB" >
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+
+</filter>   
+
+</defs>
+  
+<circle   class="bubble" cx="0" cy="0" r="0"/>  
+<path class="face"fill="#000" d="M250.1,477.1c0,0,17.9-37.5,28.3-47.5c8.3-8,10.9-12.4,40.4,0c29.5,12.4,38.1,8.5,45.1,3.1
+	c7-5.4,8.2-19.8,6.9-23.8c-1.3-4.1,3.4-9.3,6.3-9c2.9,0.3,7.7-3.1,8-6.6s0.4-3.2-0.9-8.6c2.8-1,16.2-3.4,9.3-15
+	c-6.8-11.7,3.8-15.1,3.8-15.1s19.2-0.2,19.4-11.7c0.2-11.5-17.1-33.2-17.9-40.6c-0.8-7.4,3.5-18.1,3.5-18.1s15.1-38.8-3.5-75.7
+	c-18.6-36.9-69.1-52-88.2-53.6c-40-3.3-86.6,12.4-103.7,65.3s-4.2,92.3-4.7,108.8c-1.6,56-45.6,91.3-45.6,91.3L250.1,477.1z"/>
+
+</svg>
+
+    <script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/gsap.3.5.2.js"></script>
+    <script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/MorphSVGPlugin3.min.js"></script>
+    <script type="text/javascript" src="https://repo.bfw.wiki/bfwrepo/js/Physics2DPlugin3.min.js"></script>
     <script>
-        window.addEventListener('load', function() {
-            var ul = document.getElementById('ul');
-            var currentPage = 1;
-            var imagesPerPage = 50; // 每页显示的图片数量
-            var imgLinkArray = [];
+        var select = function(s) {
+                return document.querySelector(s);
+            },
+            selectAll = function(s) {
+                return document.querySelectorAll(s);
+            },
+            container = select('.container'),
+            mainSVG = select('.mainSVG'),
+            bubble = select('.bubble')
 
-            // 生成包含一万个图片链接的数组
-            for (var i = 1; i <= 10000; i++) {
-                imgLinkArray.push(`https://bafybeigcelrn6wzgfvsur642tgt3ppoeurg5tbn2avlyvnmodlenutoxnq.ipfs.nftstorage.link/${i}.png`);
-            }
 
-            function displayImages(page) {
-                var start = (page - 1) * imagesPerPage;
-                var end = start + imagesPerPage;
-                for (var i = start; i < end && i < imgLinkArray.length; i++) {
-                    var li = document.createElement('li');
-                    var img = document.createElement('img');
-                    img.src = imgLinkArray[i];
-                    li.appendChild(img);
+        var mainTimeline = gsap.timeline({
+            paused: true
+        });
 
-                    // 添加遮罩和 ID 文本
-                    var overlay = document.createElement('div');
-                    overlay.classList.add('img-overlay');
-                    overlay.textContent = "ID: " + (i + 1); // ID 从 1 开始计数
-                    li.appendChild(overlay);
 
-                    ul.appendChild(li);
+        var particleColorArray = ['#CC230C', '#E0550D', '#C8433E', '#FA9417', '#F7A958', '#F4BEA2', '#D57A84'];
+
+        var numBubbles = 100;
+
+        //behind
+        for (var i = 0; i < numBubbles / 2; i++) {
+
+            var colorId = Math.floor(Math.random() * particleColorArray.length);
+
+            var p = bubble.cloneNode(true)
+            mainSVG.insertBefore(p, mainSVG.firstChild);
+            var startRadius = gsap.utils.random(2, 32);
+            TweenMax.set(p, {
+                attr: {
+                    cx: gsap.utils.random(200, 300),
+                    cy: gsap.utils.random(400, 400),
+                    r: 0
+                },
+                filter: 'url(#glow)',
+                fill: particleColorArray[colorId]
+            })
+
+            p.startRadius = startRadius;
+
+            var dur = gsap.utils.random(8, 10);
+            var angle = gsap.utils.random(0, 90);
+            var tl = gsap.timeline({
+                repeat: 3
+            });
+
+            tl.to(p, dur / 2, {
+                    attr: {
+                        r: startRadius
+                    }
+                })
+                .to(p, dur, {
+                    transformOrigin: '30% 50%',
+                    rotation: -180,
+                    opacity: 1,
+                    attr: {
+                        cy: 700
+                    },
+                    physics2D: {
+                        velocity: -0,
+                        angle: angle,
+                        acceleration: 0,
+                        gravity: -2,
+                        accelerationAngle: 0
+                    }
+                }, '-=' + (dur / 2))
+                .to(p, dur / 2, {
+                    attr: {
+                        r: 0
+                    }
+                }, '-=' + (dur / 2))
+
+            mainTimeline.add(tl, i / 10);
+
+        }
+
+        //in front
+        for (var i = 0; i < numBubbles; i++) {
+
+            var colorId = Math.floor(Math.random() * particleColorArray.length);
+
+            var p = bubble.cloneNode(true)
+            mainSVG.appendChild(p);
+            var startRadius = gsap.utils.random(1, 20);
+            TweenMax.set(p, {
+                attr: {
+                    cx: gsap.utils.random(250, 350),
+                    cy: gsap.utils.random(350, 500),
+                    r: 0
+                },
+                fill: particleColorArray[colorId]
+            })
+
+            var dur = gsap.utils.random(10, 12);
+            var angle = gsap.utils.random(0, -90);
+            var tl = gsap.timeline({
+                repeat: 3
+            });
+            tl.to(p, dur / 2, {
+                    attr: {
+                        r: startRadius
+                    }
+                })
+                .to(p, dur, {
+                    rotation: 280,
+                    opacity: 1,
+                    attr: {
+                        cy: 650
+                    },
+                    physics2D: {
+                        velocity: -20,
+                        angle: angle,
+                        acceleration: -2,
+                        gravity: -10,
+                        accelerationAngle: 0
+                    }
+                }, '-=' + (dur / 2))
+                .to(p, dur / 2, {
+                    attr: {
+                        r: 0
+                    }
+                }, '-=' + (dur / 2))
+
+            mainTimeline.add(tl, i / 8);
+
+        }
+
+
+        //top of head
+        for (var i = 0; i < numBubbles; i++) {
+
+            var colorId = Math.floor(Math.random() * (particleColorArray.length - 1)) + 1;
+
+            var p = bubble.cloneNode(true)
+            mainSVG.insertBefore(p, mainSVG.firstChild);
+            var startRadius = gsap.utils.random(2, 10);
+            TweenMax.set(p, {
+                attr: {
+                    cx: gsap.utils.random(250, 350),
+                    cy: gsap.utils.random(190, 210),
+                    r: startRadius
+                },
+                fill: particleColorArray[colorId]
+            })
+
+            var dur = gsap.utils.random(6, 10);
+            var angle = gsap.utils.random(0, 90);
+
+            var t = TweenMax.fromTo(p, {
+                duration: dur,
+                opacity: 1,
+                attr: {
+                    r: startRadius
                 }
-            }
-
-            // 初始加载第一页的图片
-            displayImages(currentPage);
-
-            // 当滚动到页面底部时加载新的图片
-            window.addEventListener('scroll', function() {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    currentPage++;
-                    displayImages(currentPage);
+            }, {
+                transformOrigin: '30% 650%',
+                rotation: -0,
+                repeat: 3,
+                opacity: 1,
+                attr: {
+                    r: 0,
+                    cx: '+=30'
+                },
+                physics2D: {
+                    velocity: 0,
+                    angle: angle,
+                    acceleration: 0,
+                    gravity: -20,
+                    accelerationAngle: 90
                 }
             });
+
+            mainTimeline.add(t, i / 6);
+
+        }
+
+
+
+
+        mainSVG.removeChild(bubble);
+
+
+
+        var allTl = gsap.timeline({
+            repeat: -1,
+            yoyo: false,
+            paused: false
         });
+        allTl.timeScale(1.1)
+        allTl.to(mainTimeline, {
+                duration: 12,
+                time: mainTimeline.duration(),
+                ease: Linear.easeNone
+
+            })
+            /*
+            allTl.to(mainTimeline, 20, {
+              time:3,
+              ease:Power2.easeInOut
+              
+            })
+            .to(mainTimeline, 15, {
+              time:5,
+              ease:Power2.easeInOut
+              
+            })
+            .to(mainTimeline, 10, {
+              time:7,
+              ease:Power2.easeInOut
+              
+            })
+            .to(mainTimeline, 20, {
+              time:20,
+              ease:Power2.easeInOut
+              
+            })
+            .to(mainTimeline, 20, {
+              time:30,
+              ease:Power2.easeInOut
+              
+            })
+
+            .to(mainTimeline, 20, {
+              time:40,
+              ease:Power2.easeInOut
+              
+            })
+
+            function updateHue(){
+              
+              TweenMax.set('.colorMatrix', {
+                attr:{
+                  values:(allTl.time()/allTl.duration())
+                }
+              })
+            }*/
     </script>
+
+    <!-- 页面内容 -->
+
+    <!-- 底部信息 -->
+    <footer>
+        <div class="footer-container">
+            <!-- 社交链接 -->
+            <div>
+                <a href="https://oc.app/community/te7h6-jqaaa-aaaar-a4zka-cai/?ref=nrm2v-nqaaa-aaaaf-absrq-cai">OC CHAT</a>
+                <a href="https://twitter.com/Moonapp_ic">Twitter</a>
+                <a href="#"></a>
+            </div>
+            <!-- 版权声明 -->
+            <div>
+                &copy; 2024 Your Website Name. All Rights Reserved.
+            </div>
+            <!-- 其他声明 -->
+            <div>
+                This studio runs on <a href="https://dfinity.org/">Dfinity(ICP)</a> and never goes offline.
+            </div>
+    </footer>
+</body>
+
 
 </body>
 
