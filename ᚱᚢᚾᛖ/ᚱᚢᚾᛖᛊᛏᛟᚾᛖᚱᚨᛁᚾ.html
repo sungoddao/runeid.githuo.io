@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ᛃᛟᛊᚺᚢᚨ᛫ᚨᚱᛏ᛫ᛊᛏᚢᛞᛁᛟ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            /* 居中文本 */
+        }
+        
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -180px;
+            /* Hide the sidebar initially */
+            width: 180px;
+            /* Reduced width for the sidebar */
+            height: 100%;
+            background-color: transparent;
+            /* Set sidebar background to transparent */
+            color: #fff;
+            padding: 20px;
+            transition: left 0.3s ease;
+            /* Smooth transition when showing/hiding */
+        }
+        
+        #sidebar.active {
+            left: 0;
+            /* Move sidebar to the left to show it */
+        }
+        
+        #sidebar h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        #sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        
+        #sidebar ul li a:hover {
+            color: #00ff00;
+        }
+        
+        #content {
+            padding: 20px;
+            color: #fff;
+            margin-left: 0;
+            /* Remove the margin-left to adjust for hidden sidebar */
+            transition: margin-left 0.3s ease;
+            /* Smooth transition when adjusting margin */
+        }
+        
+        canvas {
+            display: block;
+        }
+        
+        #toggleBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            /* Move the button to the right */
+            width: 20px;
+            /* Reduce button size */
+            height: 20px;
+            /* Reduce button size */
+            background-color: gold;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 999;
+            animation: rotateBtn 4s infinite linear;
+            /* Add animation for rotation */
+        }
+        
+        @keyframes rotateBtn {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        #counter {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            /* 居中显示 */
+            transform: translateX(-50%);
+            color: #fff;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="toggleBtn" onclick="toggleSidebar()"></button>
+
+    <div id="sidebar">
+        <h1>ᛃᛟᛊᚺᚢᚨ</h1>
+        <ul>
+            <li><a href="https://fl7p4-niaaa-aaaal-advza-cai.icp0.io/" target="_blank">ᚺᛟᛗᛖ</a></li>
+            <li><a href="https://fl7p4-niaaa-aaaal-advza-cai.icp0.io/art/index.html" target="_blank">ᚨᚱᛏ</a></li>
+            <li><a href="https://oc.app/community/te7h6-jqaaa-aaaar-a4zka-cai/?ref=nrm2v-nqaaa-aaaaf-absrq-cai" target="_blank">ᛟᚲ᛫ᚲᚺᚨᛏ</a></li>
+            <li><a href="https://twitter.com/Moonapp_ic" target="_blank">ᛏᚹᛁᛏᛏᛖᚱ</a></li>
+        </ul>
+        <div>
+            <p>ᚹᛖᛒⰂ@ᛒᛁᛏᚲᛟᛁᚾ</p>
+            <p>ᚱᚢᚾᛖᛊᛏᛟᚾᛖᚱᚨᛁᚾ</p>
+            <p>ⰁⰀܙᛤᛤᛤ.᛫ᚱᚢᚾᛖ᛫ᛊᛏᛟᚾᛖ᛫</p>
+            <p>ᚱᚨᛁᚾ᛫ᚾᚠᛏᛊܙ᛫ᛖᚨᚲᚺ᛫</p>
+            <p>ᚲᛟᚾᛏᚨᛁᚾᛁᚾᚷ</p>
+            <p>Ⰰᛤᛤ᛫ᛒᛁᛚᛚᛁᛟᚾ</p>
+            <p>ᛏᛟᚴᛖᚾᛊܙ᛫ᚾᛟ</p>
+            <p>ᚱᛖᛊᛖᚱᚡᚨᛏᛁᛟᚾᛊܙ᛫</p>
+            <p>$$$$$$$$$$$$$$$$$$</p>
+            <p>ᛈᛚᛖᚨᛊᛖ᛫</p>
+            <p>ᛏᛖᛚᛚ᛫ᛗᛖܙ᛫ᚺᛟᚹ</p>
+            <p>ᛗᚨᚾᚤ᛫ᚱᚢᚾᛖ</p>
+            <p>ᛊᛏᛟᚾᛖᛊ᛫ᚲᚨᚾ</p>
+            <p>ᛒᛖ᛫ᚲᛟᛚᛚᛖᚲᛏᛖᛞ</p>
+            <p>ᛁᚾ᛫ᛏᚺᛖ᛫ᚠᛁᚱᛊᛏ</p>
+            <p>Ⰰᛤᛤ᛫ᚤᛖᚨᚱᛊ፧</p>
+
+        </div>
+    </div>
+
+    <div id="content">
+        <canvas id="canvas"></canvas>
+
+        <script>
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+            var fontSize = 16;
+            var columns;
+            var drops;
+            var runeStones = [];
+            var runeDropCount = 0; // 符文掉落数量的初始值
+
+            function setup() {
+                canvas.height = window.innerHeight;
+                canvas.width = window.innerWidth;
+                columns = Math.floor(canvas.width / fontSize);
+                drops = [];
+
+                for (var x = 0; x < columns; x++) {
+                    drops[x] = Math.floor(Math.random() * canvas.height);
+                }
+            }
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#0F0';
+                ctx.font = fontSize + 'px arial';
+
+                for (var i = 0; i < drops.length; i++) {
+                    var text = "ᛃᛟᛊᚺᚢᚨᚤᛟᚢᚾᚷܙᚺᛖᚨᛚᛏᚺᚤܙᛊᛏᚱᛟᚾᚷܙᚲᚺᛖᛖᚱᚠᚢᛚᚨᚾᛞᚡᛖᚱᚤᚲᚱᛖᚨᛏᛁᚡᛖᚲᛟᛞᛖᚨᚱᛏᚲᚱᛖᚨᛏᛟᚱ".charAt(Math.floor(Math.random() * 99));
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+
+                    drops[i]++;
+                }
+
+                // Draw and update rune stones
+                for (var j = 0; j < runeStones.length; j++) {
+                    runeStones[j].draw();
+                    runeStones[j].update();
+                }
+            }
+
+            function resize() {
+                setup();
+            }
+
+            setup();
+            setInterval(draw, 33);
+            window.addEventListener('resize', resize);
+
+            // Rune Stone object
+            function RuneStone(x, y) {
+                this.x = x;
+                this.y = y;
+                this.speed = Math.random() * 2 + 1; // Random speed between 1 and 3
+                this.colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff']; // Predefined colors
+                this.color = this.colors[Math.floor(Math.random() * this.colors.length)]; // Random color
+                this.runesArray = [
+                    'ᚠ', 'ᚢ', 'ᚦ', 'ᚨ', 'ᚱ', 'ᚡ', 'ᚣ', 'ᚤ', 'ᚥ', 'ᚧ', 'ᚩ', 'ᚪ', 'ᚫ', 'ᚬ', 'ᚭ', 'ᚮ', 'ᚯ',
+                    'ᚰ', 'ᚲ', 'ᚳ', 'ᚴ', 'ᚵ', 'ᚶ', 'ᚷ', 'ᚸ', 'ᚹ', 'ᚺ', 'ᚻ', 'ᚼ', 'ᚽ', 'ᚾ', 'ᚿ', 'ᛀ', 'ᛁ',
+                    'ᛂ', 'ᛃ', 'ᛄ', 'ᛅ', 'ᛆ', 'ᛇ', 'ᛈ', 'ᛉ', 'ᛊ', 'ᛋ', 'ᛌ', 'ᛍ', 'ᛎ', 'ᛏ', 'ᛐ', 'ᛑ', 'ᛒ',
+                    'ᛓ', 'ᛔ', 'ᛕ', 'ᛖ', 'ᛗ', 'ᛘ', 'ᛙ', 'ᛚ', 'ᛛ', 'ᛜ', 'ᛝ', 'ᛞ', 'ᛟ', 'ᛠ', 'ᛡ', 'ᛢ', 'ᛣ',
+                    'ᛤ', 'ᛥ', 'ᛦ', 'ᛧ', 'ᛨ', 'ᛩ', 'ᛪ', '᛫', '᛬', '᛭', 'ᛮ', 'ᛯ', 'ᛰ', '♎', '♍', '♌', '♓', '♒',
+                    '♓', '♒', '♑', '♐', '♏', '♎', '♍', '♌', '♋', '♊', '♉', '♈', '☉', '♑', '♐',
+                    '♈', '♏', '☽', '☿', '♀', '⊕', '♁', '♂', '♃', '♄', '♅', '⛢', '♆', '♇', '♋', '♊', '♉',
+                ]; // Array of specified runes
+                this.runes = this.runesArray[Math.floor(Math.random() * this.runesArray.length)]; // Random rune symbol
+                this.draw = function() {
+                    ctx.fillStyle = this.color;
+                    ctx.fillText(this.runes, this.x * fontSize, this.y * fontSize);
+                };
+
+                this.update = function() {
+                    if (this.y * fontSize > canvas.height && Math.random() > 0.975) {
+                        this.y = 0;
+                        // 符文掉落时增加计数
+                        runeDropCount++;
+                        // 更新符文掉落数量显示
+                        document.getElementById('runeCounter').textContent = runeDropCount;
+                    }
+
+                    this.y += this.speed;
+                };
+            }
+
+            // Create new rune stones periodically
+            setInterval(function() {
+                var x = Math.floor(Math.random() * columns);
+                var y = 0;
+                var newRuneStone = new RuneStone(x, y);
+                runeStones.push(newRuneStone);
+            }, 2000); // Add a new rune stone every 2 seconds
+
+            // Function to toggle the sidebar
+            function toggleSidebar() {
+                document.getElementById('sidebar').classList.toggle('active');
+            }
+        </script>
+
+        <!-- 累积计数器部分 -->
+        <div id="counter">
+            <h2>ᚱᚢᚾᛖᛊᛏᛟᚾᛖ᛫ᛞᚱᛟᛈ᛫ᛊᛏᚨᛏᛁᛊᛏᛁᚲᛊ</h2>
+            <p id="runeCounter">0</p>
+        </div>
+    </div>
+</body>
+
+</html>
